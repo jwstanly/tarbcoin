@@ -1,0 +1,9 @@
+{
+  "name": "tarbcoin",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "openzeppelin-solidity": "4.4.1"
+  }
+}
