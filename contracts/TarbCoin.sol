@@ -3,5 +3,7 @@ pragma solidity >=0.4.22 <0.9.0;
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 contract TarbCoin is ERC20 {
-    constructor() ERC20("TarbCoin", "TRBC") {}
+    constructor() ERC20("TarbCoin", "TRBC") {
+        _mint(msg.sender, 1000000000 * 10 ** decimals());
+    }
 }
