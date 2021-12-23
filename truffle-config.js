@@ -18,10 +18,8 @@
  *
  */
 
-// const HDWalletProvider = require('@truffle/hdwallet-provider');
-//
-// const fs = require('fs');
-// const mnemonic = fs.readFileSync(".secret").toString().trim();
+const HDWalletProvider = require('@truffle/hdwallet-provider');
+const { mnemonic, infuraApiKey } = require("./secrets");
 
 module.exports = {
   /**
@@ -46,6 +44,17 @@ module.exports = {
      port: 7545,            // Standard Ethereum port (default: none)
      network_id: "*",       // Any network (default: none)
     },
+    kovan: {
+      provider: () => {
+        return new HDWalletProvider(
+          mnemonic,
+          `https://kovan.infura.io/v3/${infuraApiKey}`
+        )
+      },
+      gas: 5000000,
+      gasPrice: 25000000000,
+      network_id: 42
+    }
     // Another network with more advanced options...
     // advanced: {
     // port: 8777,             // Custom port
